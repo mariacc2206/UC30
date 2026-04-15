@@ -1,9 +1,20 @@
-int(input("Digite o primeiro número"))
-int(input("Digite o segundo número"))
+def media_notas():
 
-def soma_segura(a, b):
+    lista_notas = []
+
     try:
-        return a + b  
-    except TypeError: 
-        print("Entrada Invalida")
-    
+        for i in range(3):
+
+            nota = float(input(f"Nota {i+1}:"))
+            lista_notas.append(nota)
+
+        media = sum(lista_notas) / len(lista_notas)
+        print(f"Média: {media:.2f}")
+
+    except ValueError:
+        print("Notas devem ser números!")
+    except ZeroDivisionError:
+        print("Sem nota!")    
+
+        media_notas()
+ 
